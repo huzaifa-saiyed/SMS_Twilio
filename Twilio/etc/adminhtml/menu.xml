@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+  <menu>
+    <add id="Kitchen365_Twilio::report_twilio" title="Twilio" translate="title" module="Kitchen365_Twilio" sortOrder="100" parent="Magento_Reports::report" resource="Magento_Reports::report" />
+    <add id="Kitchen365_Twilio::report_twilio_usage" title="SMS Usage" translate="title" module="Kitchen365_Twilio" sortOrder="10" parent="Kitchen365_Twilio::report_twilio" action="twilio/usage/index" resource="Magento_Reports::report" />
+    <add id="Kitchen365_Twilio::customer_twilio_msg" title="Customer SMS" translate="title" module="Kitchen365_Twilio" sortOrder="20" parent="Kitchen365_Twilio::report_twilio" action="twilio/customer/index" resource="Magento_Reports::report" />
+  </menu>
+</config>

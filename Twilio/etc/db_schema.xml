@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="Kitchen365_twilio_log" resource="default" engine="innodb" comment="Kitchen365 Twilio Log">
+        <column xsi:type="int" name="id" nullable="false" identity="true" unsigned="true" comment="ID"/>
+        <column xsi:type="text" name="sid" nullable="true" comment="Message SID"/>
+        <column xsi:type="text" name="msg" nullable="true" comment="Message"/>
+        <column xsi:type="text" name="customer_email" nullable="true" comment="Customer Email"/>
+        <column xsi:type="text" name="customer_name" nullable="true" comment="Customer First Name"/>
+        <column xsi:type="smallint" name="entity_type_id" nullable="false" comment="Entity Type ID"/>
+        <column xsi:type="text" name="recipient_phone" nullable="false" comment="Recipient Phone Number"/>
+        <column xsi:type="smallint" name="is_error" nullable="false" comment="Result Is Error"/>
+        <column xsi:type="text" name="result" nullable="false" comment="Result Text"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Entry Timestamp"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated Timestamp"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+    <table name="quote_address">
+        <column xsi:type="int" name="sms_alert" nullable="true" default="1" comment="SMS Notifications" />
+    </table>
+    <table name="sales_order_address">
+        <column xsi:type="int" name="sms_alert" nullable="true" default="1" comment="SMS Notifications" />
+    </table>
+</schema>
